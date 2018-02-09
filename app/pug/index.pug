@@ -1,0 +1,17 @@
+extends layout/_main
+
+block variables
+	- var title = 'Главная страница'
+
+block fonts
+	script.
+			function loadFont(a,b,c,d){function e(){if(!window.FontFace)return!1;var a=new FontFace("t",'url("data:application/font-woff2,") format("woff2")',{}),b=a.load();try{b.then(null,function(){})}catch(c){}return"loading"===a.status}var f=navigator.userAgent,g=!window.addEventListener||f.match(/(Android (2|3|4.0|4.1|4.2|4.3))|(Opera (Mini|Mobi))/)&&!f.match(/Chrome/);if(!g){var h={};try{h=localStorage||{}}catch(i){}var j="x-font-"+a,k=j+"url",l=j+"css",m=h[k],n=h[l],o=document.createElement("style");if(o.rel="stylesheet",document.head.appendChild(o),!n||m!==b&&m!==c){var p=c&&e()?c:b,q=new XMLHttpRequest;q.open("GET",p),q.onload=function(){q.status>=200&&q.status<400&&(h[k]=p,h[l]=q.responseText,d||(o.textContent=q.responseText))},q.send()}else o.textContent=n}}
+			loadFont('RobotoRegular', 'css/fonts/RobotoRegular.css');
+			//не забывать фоллбек для мобилок
+block content
+	p 12333  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis rerum non a provident soluta eius magnam natus, dolores mollitia molestias nemo sint repellat, laudantium numquam expedita adipisci reiciendis! Iure, repellendus!22
+	p  Далеко-далеко за словесными гами в стране, гласных и согласных живут рыбные тексты. Которой своих имени, деревни жаренные то вооса родного путь коварных рот свой живет послушавшись своего гор строчка эта свое, предлия.
+	p  Далеко-далеко за словесными гами в стране, гласных и согласных живут рыбные тексты. Которой своих имени, деревни жаренные то вооса родного путь коварных рот свой живет послушавшись своего гор строчка эта свое, предлия.
+	p.test  Далеко-далеко за словесными гами в стране, гласных и согласных живут рыбные тексты. Которой своих имени, деревни жаренные то вооса родного путь коварных рот свой живет послушавшись своего гор строчка эта свое, предлия.
+	+icon('icon')
+block script
