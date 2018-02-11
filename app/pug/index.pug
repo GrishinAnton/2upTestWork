@@ -1,17 +1,35 @@
 extends layout/_main
 
 block variables
-	- var title = 'Главная страница'
+	- var title = 'Страница регистрации'
 
-block fonts
-	script.
-			function loadFont(a,b,c,d){function e(){if(!window.FontFace)return!1;var a=new FontFace("t",'url("data:application/font-woff2,") format("woff2")',{}),b=a.load();try{b.then(null,function(){})}catch(c){}return"loading"===a.status}var f=navigator.userAgent,g=!window.addEventListener||f.match(/(Android (2|3|4.0|4.1|4.2|4.3))|(Opera (Mini|Mobi))/)&&!f.match(/Chrome/);if(!g){var h={};try{h=localStorage||{}}catch(i){}var j="x-font-"+a,k=j+"url",l=j+"css",m=h[k],n=h[l],o=document.createElement("style");if(o.rel="stylesheet",document.head.appendChild(o),!n||m!==b&&m!==c){var p=c&&e()?c:b,q=new XMLHttpRequest;q.open("GET",p),q.onload=function(){q.status>=200&&q.status<400&&(h[k]=p,h[l]=q.responseText,d||(o.textContent=q.responseText))},q.send()}else o.textContent=n}}
-			loadFont('RobotoRegular', 'css/fonts/RobotoRegular.css');
-			//не забывать фоллбек для мобилок
+
 block content
-	p 12333  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis rerum non a provident soluta eius magnam natus, dolores mollitia molestias nemo sint repellat, laudantium numquam expedita adipisci reiciendis! Iure, repellendus!22
-	p  Далеко-далеко за словесными гами в стране, гласных и согласных живут рыбные тексты. Которой своих имени, деревни жаренные то вооса родного путь коварных рот свой живет послушавшись своего гор строчка эта свое, предлия.
-	p  Далеко-далеко за словесными гами в стране, гласных и согласных живут рыбные тексты. Которой своих имени, деревни жаренные то вооса родного путь коварных рот свой живет послушавшись своего гор строчка эта свое, предлия.
-	p.test  Далеко-далеко за словесными гами в стране, гласных и согласных живут рыбные тексты. Которой своих имени, деревни жаренные то вооса родного путь коварных рот свой живет послушавшись своего гор строчка эта свое, предлия.
-	+icon('icon')
+	.registration-page
+		.mobile-page.mobile-page--registration.mobile-page--mt
+			.enter-logo.enter-logo--registration-page
+				span.logo-line.logo--small-line
+					svg(xmlns='http://www.w3.org/2000/svg', width="76" height="20" viewbox='0 0 152 40')
+						path(d='M146.7 35C107.7-4.1 44.3-4.1 5.3 35', fill='none', stroke='#fff', stroke-width='10', stroke-linecap='round', stroke-miterlimit='10')
+						path(fill-rule='evenodd', clip-rule='evenodd', fill='none', d='M-299-298h750v1334h-750z')
+				span.logo-line.logo--big-line
+					svg(xmlns='http://www.w3.org/2000/svg', width="112" height="27" viewbox='0 0 224 54')
+						path(d='M218.1 49C159.5-9.6 64.5-9.6 5.9 49', fill='none', stroke='#fff', stroke-width='10', stroke-linecap='round', stroke-miterlimit='10')
+						path(fill-rule='evenodd', clip-rule='evenodd', fill='none', d='M-263-258h750v1334h-750z')
+
+				img(src="img/logo.svg", alt="N")
+			.registration-form
+				form
+					.input-block.input-block--mb.input--username
+						input(type="text" id="username" class="input input--username" name="username" required)
+						label(for="username") Username
+					.input-block.input-block--mb.input--password
+						input(type="password" id="password" class="input" name="password" required)
+						label(for="password") Password
+					button.btn.btn--orange Get Started
+			.registration-link.justify-c-sb
+				a(href="#").link Create Account
+				a(href="#").link Need Help?
+
+	//- +icon('icon')
 block script

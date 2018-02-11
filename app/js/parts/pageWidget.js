@@ -10,7 +10,14 @@ function pageWidget(pages) {
 }
 
 $(document).ready(function ($) {
-	pageWidget(['index','blog','news','about_us','contact']);
+	pageWidget([
+		'index',
+		'create-accaunt',
+		'story',
+		'widgets',
+		'feedback',
+
+		]);
 });
 
 //===========

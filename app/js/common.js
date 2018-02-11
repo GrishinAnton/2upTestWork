@@ -10,163 +10,188 @@ function pageWidget(pages) {
 }
 
 $(document).ready(function ($) {
-	pageWidget(['index','blog','news','about_us','contact']);
+	pageWidget([
+		'index',
+		'create-accaunt',
+		'story',
+		'widgets',
+		'feedback',
+
+		]);
 });
 
 //===========
-// Toogle mnu
-(function(){
-	$(function(){
-		$(".toggle-mnu").click(function() {
-			$(this).addClass("on");
-			$(".fixed-mnu").hide();
-		});
-	});
+//=====toggleMnu
+;(function(){
+	var mnuLink = $('.header__item--mnu a')
+	var sidebar = $('.nav')
+	var mainBlock = $('.mobile-page')
+
+	if($(sidebar)[0]){
+
+		mnuLink.on('click',toggleMnu);	
+
+		sidebar.on('swipeleft', function(e){
+			if($(this).hasClass('active')){
+				toggleMnu(e)
+			}
+		})
+
+		function toggleMnu(e){
+			console.log("++")
+			e.preventDefault()
+			sidebar.toggleClass("active")
+			mainBlock.toggleClass("active")
+		}
+	}
 })();
 
 
 //============
-//YaMap
-(function(){
-	ymaps.ready(init);
-	  var myMap,
-	      myPlacemark;
+;(function(){
+	var conteiner = $('.feedback-contents')
+	var blockWidth = $(conteiner).width()
+	var contentsWidth = blockWidth * 3
+	var items = $('.feedback-contents .feedback-content__item')
+	var transform = 0
 
-  function init(){     
-      myMap = new ymaps.Map("map", {
-          center: [55.709738069037144,37.68927599999996],
-          zoom: 16,
-          controls: ['zoomControl']
-      });
+	//табы сверху
+	var tab = $('.feedback-tabs__tab li')
 
-      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-  			myMap.behaviors.disable(['scrollZoom', 'drag']); 
-			} else {
-				myMap.behaviors.disable(['scrollZoom']); 
-			}      
+	tab.on('click', function(){
+		tabsSwitchActive($(this))
 
-      myPlacemark = new ymaps.Placemark([55.709738069037144,37.68927599999996], { 
-          hintContent: '2DТрейд', 
-          balloonContent: '2DТрейд' 
-      });
+		var transformLi = $(this).index() * blockWidth
+		containerTransform(-transformLi)
+		transform = -transformLi
+	})
 
-      myMap.geoObjects.add(myPlacemark);
+	//выставляем ширину блока при загрузке
+	$(conteiner).width(contentsWidth + 10)
 
-  }
-})();
+	//выставляем шиирну всем блокам
+	items.each(function(item, elem){
+		$(elem).css('max-width', blockWidth)
+	})
 
 
-//========================
-//mailJs
-(function(){
-	$('.popup-rieltor-day-form').on('submit', function(e) { 
-		var th = $(this);
-		var sendFail = true;
-		var ref = th.find("[required]");
-		var popupSendButton = $('.js-popup-rieltor-day-order-button');
-
-				if ( $(ref).val() == '' )
-					 {
-					alert("Заполните поля пожалуйста");
-					var sendFail = false;
-					e.preventDefault();
-					return false;
-			 }
-		if (sendFail == true){
-			popupSendButton.prop('disabled', true);
-			popupSendButton.text('Запрос отправляется...');
-
-		$.ajax({
-			type: "POST",
-			url: "", 
-			data: th.serialize()
-		}).done(function() {
-			
-			setTimeout(function(){
-
-				th.trigger("reset");
-			},20000)
-			
-		});
-		}return false;
-	});
-})();
-
-
-
-//=================
-//Magnific popup
-(function(){
-	$(document).ready(function($) {
-		$('.popup-search').magnificPopup({
-		    type: 'inline'
-		});
-	});
-})();
-
-//=================
-
-
-
-
-//Fixed mnu
-
-// $(window).scroll(function(){
-// 	var scrollTop = $(window).scrollTop(),
-// 	stickyBlock = $(".breadcrambs"),
-// 	position = stickyBlock.offset().top;
 	
-// 		$(window).on('resize', function() {
-// 			position = stickyBlock.offset().top;
-// 		});
-
-// 	if(scrollTop >= position){
-// 		$(".wrapper--main_mnu").css('top', '0').addClass('fixed-mnu');
-// 	}
-// 	if(scrollTop <= position){
-// 		$(".wrapper--main_mnu").css('top', '').removeClass('fixed-mnu'); 
-// 	}
-// });
-
-
-
-//Scroll
-$(function(){
-
-	//scrollToTop
-	var 
-		scrolllink = $('.scrolltop'),
-		scrollToTop = $('.scrolltop a')
-
-	$(window).scroll(function(){
-		var scroll = $(window).scrollTop();
-
-		if (scroll > 300){
-			scrolllink.show()
-		} if (scroll < 300){
-			scrolllink.hide()
+	//действия при свайпе по итемам в контейнере
+	items.on('swipeleft', function(){
+		transform+=-blockWidth
+		if(transform == -contentsWidth){
+			transform = -contentsWidth  + blockWidth
 		}
+		switch(transform){
+			case -blockWidth:				
+				tabsSwitchActive($(tab).eq(1))
+				break
+			case -blockWidth * 2: 
+				tabsSwitchActive($(tab).eq(2))
+				break
+		}
+		containerTransform(transform)
+	})
+	items.on('swiperight', function(){
+		transform+=blockWidth
+		if(transform >= 0){
+			transform = 0
+		}
+		switch(transform){
+			case 0: 
+				tabsSwitchActive($(tab).eq(0))
+				break
+			case -blockWidth: 
+				tabsSwitchActive($(tab).eq(1))
+				break
+		}
+		containerTransform(transform)
+	})
 
-		$('.scrolltop a').on('click', function(event){
-		event.preventDefault();
+	function tabsSwitchActive($this){
+		$this.addClass('active')
+					.siblings()
+					.removeClass('active')
+	}
 
-		var id  = $(this).attr('href'),
-		top = $(id).offset().top;
+	function containerTransform(translate){
+		$(conteiner).css('transform', 'translateX(' + translate + 'px' + ')')
+	}
 	
-		$('body,html').stop(true).animate({scrollTop: top}, 1000);		
 
-	});	
+})();
+//=====playVideo
 
-});
 
-	//Anchor
-	$('.scroll').on('click', function(event){
-		event.preventDefault();
+// global variable for the player
+var player;
 
-		var id  = $(this).attr('href'),
-		top = $(id).offset().top;
-	
-	$('body,html').stop(true).animate({scrollTop: top}, 1500);
+// this function gets called when API is ready to use
+function onYouTubePlayerAPIReady() {
+  // create the global player from the specific iframe (#video)
+  player = new YT.Player('video', {
+    events: {
+      // call this function when player is ready to use
+      'onReady': onPlayerReady
+    }
+  });
+}
 
-	});	
-});
+function onPlayerReady(event) {
+  
+  // bind events
+  var playButton = $('.article__media__image-inner');
+  playButton.on("click", function() {
+  	playButton.fadeOut('slow')
+    player.playVideo();
+  });  
+
+  
+}
+
+// Inject YouTube API script
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+//=====slider
+
+;(function(){
+	$('.article-slider').slick({
+	  arrows: false,
+	  dots: true,
+	  slidesToScroll: 1,
+    centerMode: true,
+		centerPadding: '80px',
+    slidesToShow: 1,
+  //   responsive: [
+  //   {
+  //     breakpoint: 420,
+  //     settings: {
+	 //  		slidesToScroll: 1,
+  //       centerMode: true,
+  //   		centerPadding: '20px',
+  //       slidesToShow: 1
+  //     }
+  //   }
+  // ]
+	});
+})();
+//====focusInput
+
+(function() {
+	var input = $('.input');
+
+
+	input.on("blur", function() {
+		if ($(this).val().length >= 1) {
+			$(this).closest('.input-block')
+			.find('label')
+			.addClass("active");
+		} else {
+			$(this).closest('.input-block')
+			.find('label')
+			.removeClass("active");
+		}
+	});
+})();

@@ -1,0 +1,95 @@
+extends layout/_main
+
+block variables
+	- var title = 'Widgets'
+
+ 
+block content
+	.nav
+		.nav__inner
+			nav.mnu
+				ul
+					li
+						a(href="#").mnu--news NEWS
+					li
+						a(href="#").mnu--channels CHANNELS
+					li
+						a(href="#").mnu--bookmarks BOOKMARKS
+					li
+						a(href="#").mnu--overview OVERVIEW
+					li
+						a(href="#").mnu--calendar CALENDAR
+					li
+						a(href="#").mnu--timeline TIMELINE
+					li
+						a(href="#").mnu--profile PROFILE
+					li
+						a(href="#").mnu--widgets WIDGETS
+					li
+						a(href="#").mnu--settings SETTINGS
+			.nav__logout.justify-c-sb
+				.nav__content
+					a(href="#") LOG OUT
+					p Thomas Schneider
+				.nav__media
+					img(src="img/avatar@1.png", srcset="img/avatar@2.png 2x" alt="Avatar")
+	.mobile-page
+		.header.justify-c-sb
+			.header__item.header__item--mnu
+				a(href="#")
+			.header__item.header__item--logo
+				a(href="#")
+			.header__item.header__item--add
+				a(href="#")
+		.page-tite.justify-c-c
+			p  WIDGETS
+		.wheather-block
+			.wheather__degrees.justify-c-sb
+				.wheather__cloudy
+					img(src="img/icons/weather.svg", alt="Cloudy")
+					p.wheather__cloudy--cloudy Mostly Cloudy
+					p.wheather__cloudy--city New York
+				.wheather__degree
+					p 76 <span>º</span>					
+			.wheather__list
+				ul.justify-c-sb
+					li
+						p.wheather__list--degree 65º
+						p.wheather__list--time 8 AM
+					li
+						p.wheather__list--degree 86º
+						p.wheather__list--time 12 PM
+					li
+						p.wheather__list--degree 79º
+						p.wheather__list--time 4 PM
+					li
+						p.wheather__list--degree 62º
+						p.wheather__list--time 8 PM
+					li
+						p.wheather__list--degree 59º
+						p.wheather__list--time 12 AM
+					li
+						p.wheather__list--degree 52º
+						p.wheather__list--time 4 AM
+			.wheather__bg-cloudy
+				img(src="img/graph_top@1.png", srcset="img/graph_top@2.png 2x" alt="Cloudy")
+		.stock-block
+			.stock-item
+				p.stock-item--stock NASDAQ
+				p.stock-item--persent.stock-item--persent-plus +0.51<span>%</span>
+				p.stock-item--index 5,055.55
+				a(href="#").stock-item--button Details
+				a(href="#").stock-item--config
+				.stock-item--bg-stock
+					img(src="img/graph_let@1.png", srcset="img/graph_let@1.png 2x" alt="Stock")
+			.stock-item
+				p.stock-item--stock DOW JONES
+				p.stock-item--persent.stock-item--minus -0.31%
+				p.stock-item--index 4,567.00
+				a(href="#").stock-item--button Details
+				a(href="#").stock-item--config
+				.stock-item--bg-stock
+					img(src="img/graph_right@1.png", srcset="img/graph_right@2.png 2x" alt="Stock")
+ 
+		
+block script

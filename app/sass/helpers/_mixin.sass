@@ -56,8 +56,10 @@
   background-size: $width $height
 
 // retina, also available as +hdpi
+$retina-dpi: 144dpi
+$retina-dppx: 1.5dppx
 =retina
-  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)
+  @media only screen and (min-resolution: $retina-dpi), only screen and (min-resolution: $retina-dppx)
     @content
 
 =box

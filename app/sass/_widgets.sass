@@ -1,0 +1,207 @@
+/*WIDGETS*/
+
+
+
+.page-tite
+	height: 5.938rem
+	background-color: #f96332
+	text-align: center
+	display: flex
+	align-items: center	
+	position: relative
+	&::after
+		position: absolute
+		content: ""
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: #000000
+		opacity: 0.05
+	p
+		margin: 0
+		padding: 0
+		color: #ffffff
+		font-family: Montserrat
+		font-size: 1.25rem
+		font-weight: 700
+		text-transform: uppercase
+		letter-spacing: 0.125rem
+
+
+
+
+
+
+.wheather-block
+	padding-top: rem(28)
+	padding-bottom: rem(18)
+	padding-left: rem(25)
+	padding-right: rem(25)
+	background-color: #ffb235
+	position: relative
+	
+
+
+	
+
+.wheather__degrees
+	display: flex
+	z-index: 1
+	position: relative	
+	p
+		margin: 0
+		padding: 0
+		color: #ffffff
+
+.wheather__cloudy
+	position: relative
+	z-index: 1
+	img
+		max-width: 43px
+		height: auto
+		display: inline-block		
+	.wheather__cloudy--cloudy
+		font-size: 0.813rem
+		line-height: 1.4rem
+		font-weight: 700
+	.wheather__cloudy--city
+		opacity: 0.5
+		font-size: 0.813rem
+		line-height: 0.813rem
+		font-weight: 700
+
+.wheather__degree
+	padding-right: rem(15)
+	p
+		font-size: 6.875rem
+		line-height: 5.4rem
+		font-weight: 700
+		position: relative		
+		span
+			position: absolute
+			top: 0
+			right: rem(-22)
+			font-size: 2.5rem
+			line-height: 2.5rem
+
+.wheather__list
+	margin-top: rem(93)
+	position: relative
+	z-index: 1
+	p
+		margin: 0
+		padding: 0
+		color: #ffffff
+	ul
+		width: 100%
+		display: flex
+	li
+	.wheather__list--degree
+		font-size: 1.25rem
+		font-weight: 700
+	.wheather__list--time
+		opacity: 0.6
+		font-size: 0.563rem
+		font-weight: 700
+		text-transform: uppercase
+
+
+
+.wheather__bg-cloudy
+	position: absolute
+	top: 0
+	right: 0
+	left: 0
+	bottom: 0
+	img
+		width: 100%
+		height: auto
+		
+
+
+.stock-block	
+	background-color: #fff
+	display: flex
+	p,a
+		margin: 0
+		padding: 0
+		position: relative
+		z-index: 1
+.stock-item
+	position: relative	
+	width: 50%
+	padding-left: rem(16)
+	padding-bottom: rem(26)
+	padding-top: rem(18)	
+	padding-bottom: rem(26)
+	background-repeat: no-repeat
+	background-position: center bottom
+	background-size: 100%
+	.stock-item--stock
+		color: #000000
+		font-size: 0.75rem
+		font-weight: 700
+		text-transform: uppercase
+		margin-bottom: rem(18)
+	.stock-item--persent
+		font-size: 2.5rem
+		line-height: 2.5rem
+		font-weight: 700
+		margin-bottom: rem(10)
+		span
+			letter-spacing: -1rem
+		&.stock-item--persent-plus
+			color: #63da38
+		&.stock-item--minus
+			color: #ff3636
+	.stock-item--index
+		opacity: 0.3
+		color: #000000
+		font-size: 0.938rem
+		font-weight: 700
+	.stock-item--button
+		display: block	
+		margin-left: auto
+		margin-right: auto				
+		text-align: center		
+		margin-top: rem(83)
+		width: 6.25rem
+		height: 2.188rem
+		border-radius: 1.125rem
+		border: 0.063rem solid rgba(0, 0, 0, 0.1)
+		background-color: transparent
+		color: #f96332
+		font-size: 0.688rem
+		line-height: 2rem
+		font-weight: 700
+	.stock-item--config
+		position: absolute
+		width: rem(6)
+		height: rem(15)
+		top: rem(15)
+		right: rem(15)
+		&::after,
+		&::before
+			position: absolute
+			content: ""
+			top: 0
+			left: 0
+			border: rem(1) solid #000
+			width: 0.375rem
+			height: 0.375rem
+			opacity: 0.3
+			border-radius: 50%
+		&::before
+			top: rem(8)
+	.stock-item--bg-stock
+		position: absolute
+		top: 0
+		right: 0
+		left: 0
+		bottom: 0
+		img
+			width: 100%
+			height: auto
+			
+		

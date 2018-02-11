@@ -1,0 +1,85 @@
+extends layout/_main
+
+block variables
+	- var title = 'FeedBack'
+
+ 
+block content
+	.nav
+		.nav__inner
+			nav.mnu
+				ul
+					li
+						a(href="#").mnu--news NEWS
+					li
+						a(href="#").mnu--channels CHANNELS
+					li
+						a(href="#").mnu--bookmarks BOOKMARKS
+					li
+						a(href="#").mnu--overview OVERVIEW
+					li
+						a(href="#").mnu--calendar CALENDAR
+					li
+						a(href="#").mnu--timeline TIMELINE
+					li
+						a(href="#").mnu--profile PROFILE
+					li
+						a(href="#").mnu--widgets WIDGETS
+					li
+						a(href="#").mnu--settings SETTINGS
+			.nav__logout.justify-c-sb
+				.nav__content
+					a(href="#") LOG OUT
+					p Thomas Schneider
+				.nav__media
+					img(src="img/avatar@1.png", srcset="img/avatar@2.png 2x" alt="Avatar")
+	.mobile-page.mobile-page--feedback
+		.header.justify-c-sb
+			.header__item.header__item--mnu
+				a(href="#")
+			.header__item.header__item--logo
+				a(href="#")
+			.header__item.header__item--search
+				a(href="#")
+		.feedback-tabs
+			.feedback-tabs__tab
+				ul
+					li.feedback-tabs--phone.active
+						svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', viewbox='0 0 50 50')
+							path(d='M30.6 32.3l4.3-4.3S45 32.6 45 32.8c0 0-.7 12.2-1.8 12.2C24.7 45 5 25.3 5 6.9 5 5.7 17.4 5 17.4 5l4.8 10.1-4.5 4.3c2.7 5.5 7.4 10 12.9 12.9z', stroke-width='2')
+					li.feedback-tabs--mail
+						svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', viewbox='0 0 41 34')
+							path(d='M.3 4c0-2.2 1.8-4 4-4h32c2.2 0 4 1.8 4 4v26c0 2.2-1.8 4-4 4h-32c-2.2 0-4-1.8-4-4V4z', fill='none',stroke-width='2', stroke-linecap='round')
+							path(fill='none', stroke-width='2', stroke-miterlimit='10', d='M38.3 1L20.8 19 3.3 1')
+					li.feedback-tabs--location
+							svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink',viewbox='0 0 31 44')
+								style(type='text/css').
+								path.st0(d='M15.5,20.9c-3.1,0-5.5-2.4-5.5-5.5s2.4-5.5,5.5-5.5s5.5,2.4,5.5,5.5S18.6,20.9,15.5,20.9z M15.5,0\
+									C6.9,0,0,6.8,0,15.4C0,26.8,15.5,44,15.5,44S31,26.8,31,15.4C31,6.8,24.1,0,15.5,0z')
+
+
+		.feedback-contents
+			.feedback-content__item
+				p.feedback-content__item--title SEND Phone
+			.feedback-content__item
+				p.feedback-content__item--title SEND FEEDBACK
+				p.feedback-content__item--description Your feedback is very important to us.
+				.feedback-content__form
+					form
+						.input-block.input-block--mb.input--name
+							input(type="text" class="input input--name" name="username" required disabled)
+							label Thomas Schneider
+						.input-block.input-block--mb.input--email
+							input(type="text" class="input" name="email" required disabled)
+							label thomas@invisionapp.com
+						.search-block
+							input(type="text" class="search" name="comment" placeholder="Write something..." required)
+							button.btn-arrow
+			.feedback-content__item
+				p.feedback-content__item--title SEND map
+			
+				
+		
+ 
+		
+block script

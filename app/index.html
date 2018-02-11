@@ -1,13 +1,8 @@
-
-<!--  Breadcrumbs-->
-<!--  items - pages in array, e.g. (['Main page', 'News'])-->
-<!--  last - last active page in span, e.g. (['Main page', 'News'], 'News detail')-->
-<!--+breadcrumbs(['Main page', 'News'], 'News detail')-->
-<!--+breadcrumbs(['Main page'])--><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru-RU">
   <head>
     <meta charset="utf-8">
-    <title>Главная страница</title>
+    <title>Страница регистрации</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,25 +10,40 @@
     <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
-    <script>
-      function loadFont(a,b,c,d){function e(){if(!window.FontFace)return!1;var a=new FontFace("t",'url("data:application/font-woff2,") format("woff2")',{}),b=a.load();try{b.then(null,function(){})}catch(c){}return"loading"===a.status}var f=navigator.userAgent,g=!window.addEventListener||f.match(/(Android (2|3|4.0|4.1|4.2|4.3))|(Opera (Mini|Mobi))/)&&!f.match(/Chrome/);if(!g){var h={};try{h=localStorage||{}}catch(i){}var j="x-font-"+a,k=j+"url",l=j+"css",m=h[k],n=h[l],o=document.createElement("style");if(o.rel="stylesheet",document.head.appendChild(o),!n||m!==b&&m!==c){var p=c&&e()?c:b,q=new XMLHttpRequest;q.open("GET",p),q.onload=function(){q.status>=200&&q.status<400&&(h[k]=p,h[l]=q.responseText,d||(o.textContent=q.responseText))},q.send()}else o.textContent=n}}
-      loadFont('RobotoRegular', 'css/fonts/RobotoRegular.css');
-      //не забывать фоллбек для мобилок
-    </script>
   </head>
   <body>
-    <p>12333  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis rerum non a provident soluta eius magnam natus, dolores mollitia molestias nemo sint repellat, laudantium numquam expedita adipisci reiciendis! Iure, repellendus!22</p>
-    <p> Далеко-далеко за словесными гами в стране, гласных и согласных живут рыбные тексты. Которой своих имени, деревни жаренные то вооса родного путь коварных рот свой живет послушавшись своего гор строчка эта свое, предлия.</p>
-    <p> Далеко-далеко за словесными гами в стране, гласных и согласных живут рыбные тексты. Которой своих имени, деревни жаренные то вооса родного путь коварных рот свой живет послушавшись своего гор строчка эта свое, предлия.</p>
-    <p class="test"> Далеко-далеко за словесными гами в стране, гласных и согласных живут рыбные тексты. Которой своих имени, деревни жаренные то вооса родного путь коварных рот свой живет послушавшись своего гор строчка эта свое, предлия.</p>
-    <svg class="icon icon-icon ">
-      <use xlink:href="img/svg/symbol/sprite.svg#icon"></use>
-    </svg>
+    <div class="registration-page">
+      <div class="mobile-page mobile-page--registration mobile-page--mt">
+        <div class="enter-logo enter-logo--registration-page"><span class="logo-line logo--small-line">
+            <svg xmlns="http://www.w3.org/2000/svg" width="76" height="20" viewbox="0 0 152 40">
+              <path d="M146.7 35C107.7-4.1 44.3-4.1 5.3 35" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-miterlimit="10"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" fill="none" d="M-299-298h750v1334h-750z"></path>
+            </svg></span><span class="logo-line logo--big-line">
+            <svg xmlns="http://www.w3.org/2000/svg" width="112" height="27" viewbox="0 0 224 54">
+              <path d="M218.1 49C159.5-9.6 64.5-9.6 5.9 49" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-miterlimit="10"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" fill="none" d="M-263-258h750v1334h-750z"></path>
+            </svg></span><img src="img/logo.svg" alt="N"></div>
+        <div class="registration-form">
+          <form>
+            <div class="input-block input-block--mb input--username">
+              <input class="input input--username" type="text" id="username" name="username" required>
+              <label for="username">Username</label>
+            </div>
+            <div class="input-block input-block--mb input--password">
+              <input class="input" type="password" id="password" name="password" required>
+              <label for="password">Password</label>
+            </div>
+            <button class="btn btn--orange">Get Started</button>
+          </form>
+        </div>
+        <div class="registration-link justify-c-sb"><a class="link" href="#">Create Account</a><a class="link" href="#">Need Help?</a></div>
+      </div>
+    </div>
     <!-- loadCss-->
-    <link rel="stylesheet" href="css/all.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.css?ver=7">
+    <link rel="stylesheet" href="css/style.css?ver=7">
     <!-- loadScript-->
-    <script src="js/all.js"></script>
-    <script src="js/common.js"></script>
+    <script src="js/all.js?ver=7"></script>
+    <script src="js/common.js?ver=7"></script>
   </body>
 </html>

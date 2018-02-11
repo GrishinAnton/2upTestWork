@@ -1,10 +1,9 @@
 body
-	font-family: sans-serif
 	font-size: 16px
 	min-width: 320px
 	position: relative
 	line-height: 1.6
-	font-family: "HeliosLight"
+	font-family: "Montserrat", sans-serif
 	overflow-x: hidden
 	margin: 0
 	padding: 0
@@ -19,61 +18,92 @@ a:visited,
 a:focus
 	text-decoration: none
 
+img,
+button
+	outline: none
+	border: none
 
-
-
-.slick-next
-	font-size: 0
-	position: absolute
-	top: 50%
-	transform: translateY(-50%)
-	left: 0px
-	background-image: url(../img/slider-arrow-left.png) 
-	width: 27px
-	height: 51px
-	background-color: transparent
-	border: none 
-	outline-style: none
-	z-index: 10
-.slick-prev
-	font-size: 0
-	position: absolute
-	top: 50%
-	transform: translateY(-50%)
-	right: 0px
-	background-image: url(../img/slider-arrow-right.png) 
-	width: 27px
-	height: 51px
-	background-color: transparent
-	border: none 
-	outline-style: none
-	z-index: 10
-
-
-
-
-
-// Цвет placeholder
-.main-form input[placeholder]
-	color: #d7d7d7
-.main-form input::-webkit-input-placeholder 
-	color: #d7d7d7
-.main-form input:-moz-placeholder 
-	color: #d7d7d7
-// Скрытие placeholder при фокусе
-.main-form input:focus::-webkit-input-placeholder
-	color: transparent
-.main-form input:focus::-moz-placeholder
-	color: transparent
-.main-form input:focus:-moz-placeholder
-	color: transparent
-.main-form input:focus:-ms-input-placeholder
-	color: transparent
+button
+	cursor: pointer
 	
 
-// magnificPopup
-.white-popup
+*,
+*::after,
+*::before
+	box-sizing: border-box
+
+
+
+
+//page
+.registration-page
+	background-color: #db876d
+
+
+
+.mobile-page
+	width: 100%
+	max-width: 420px
+	min-height: 100vh
+	margin: 0 auto
+	background-repeat: no-repeat
+	background-position: center
+	background-size: cover
 	position: relative
+	transition: $tr
+	will-change: transform
+	overflow: hidden
+	&.active
+		transform: translateX(300px)
+	
+
+
+
+
+
+
+
+//btn	
+.btn
+	width: 100%
+	height: 3.438rem
+	border-radius: 1.75rem	
+	color: #ffffff
+	font-family: Montserrat
+	font-size: 0.813rem
+	font-weight: 700
+	background-color: transparent
+
+.btn--orange
+	background-color: #f96332
+
+.btn--transparent
+	border-radius: 1.75rem
+	border: 0.063rem solid rgba(255, 255, 255, 0.3)
+
+.bg--mt50
+	margin-top: rem(50)
+
+
+
+
+//image
+.image-shadow
+	box-shadow: 0 0.625rem 1.563rem rgba(0, 0, 0, 0.3)
+
+
+//flex
+.justify-c-sb
+	justify-content: space-between
+
+.justify-c-c
+	justify-content: center
+
+
+
+
+
+
 
 
 
@@ -124,43 +154,3 @@ a:focus
 			transform: rotate(45deg) translate(-1px, 0px)
 		&:after
 			transform: rotate(-45deg) translate(6px, -7px)
-
-// map
-#map
-	max-width: 800px
-	height: 400px
-
-// scrollToTop
-.scrolltop 
-	display: none
-	bottom: 30px
-	height: 42px
-	background-color: #000
-	border-radius: 50%
-	position: fixed
-	right: 30px
-	width: 42px
-	z-index: 10
-	cursor: pointer
-	transition: all 300ms ease-in
-	&::after
-		position: absolute
-		content: "";
-		width: 10px
-		height: 10px
-		box-shadow: inset -1px -1px 0 1px white;
-		top: 52%
-		left: 51%
-		transform: translate(-50%, -50%) rotate(-135deg)
-		border-radius: 50px 0 0 0
-		background-color: transparent;
-	&:active
-		background-color: #000 
-
-.scrolltop:hover 
-	background-color: #000
-
-.scrolltop a 
-	display: block
-	width: 100%
-	height: 100% 

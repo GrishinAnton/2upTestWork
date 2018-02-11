@@ -1,75 +1,72 @@
+;(function(){
+	var conteiner = $('.feedback-contents')
+	var blockWidth = $(conteiner).width()
+	var contentsWidth = blockWidth * 3
+	var items = $('.feedback-contents .feedback-content__item')
+	var transform = 0
+
+	//табы сверху
+	var tab = $('.feedback-tabs__tab li')
+
+	tab.on('click', function(){
+		tabsSwitchActive($(this))
+
+		var transformLi = $(this).index() * blockWidth
+		containerTransform(-transformLi)
+		transform = -transformLi
+	})
+
+	//выставляем ширину блока при загрузке
+	$(conteiner).width(contentsWidth + 10)
+
+	//выставляем шиирну всем блокам
+	items.each(function(item, elem){
+		$(elem).css('max-width', blockWidth)
+	})
 
 
-
-
-//Fixed mnu
-
-// $(window).scroll(function(){
-// 	var scrollTop = $(window).scrollTop(),
-// 	stickyBlock = $(".breadcrambs"),
-// 	position = stickyBlock.offset().top;
 	
-// 		$(window).on('resize', function() {
-// 			position = stickyBlock.offset().top;
-// 		});
-
-// 	if(scrollTop >= position){
-// 		$(".wrapper--main_mnu").css('top', '0').addClass('fixed-mnu');
-// 	}
-// 	if(scrollTop <= position){
-// 		$(".wrapper--main_mnu").css('top', '').removeClass('fixed-mnu'); 
-// 	}
-// });
-
-
-
-//Scroll
-$(function(){
-
-	//scrollToTop
-	var 
-		scrolllink = $('.scrolltop'),
-		scrollToTop = $('.scrolltop a')
-
-	$(window).scroll(function(){
-		var scroll = $(window).scrollTop();
-
-		if (scroll > 300){
-			scrolllink.show()
-		} if (scroll < 300){
-			scrolllink.hide()
+	//действия при свайпе по итемам в контейнере
+	items.on('swipeleft', function(){
+		transform+=-blockWidth
+		if(transform == -contentsWidth){
+			transform = -contentsWidth  + blockWidth
 		}
+		switch(transform){
+			case -blockWidth:				
+				tabsSwitchActive($(tab).eq(1))
+				break
+			case -blockWidth * 2: 
+				tabsSwitchActive($(tab).eq(2))
+				break
+		}
+		containerTransform(transform)
+	})
+	items.on('swiperight', function(){
+		transform+=blockWidth
+		if(transform >= 0){
+			transform = 0
+		}
+		switch(transform){
+			case 0: 
+				tabsSwitchActive($(tab).eq(0))
+				break
+			case -blockWidth: 
+				tabsSwitchActive($(tab).eq(1))
+				break
+		}
+		containerTransform(transform)
+	})
 
-		$('.scrolltop a').on('click', function(event){
-		event.preventDefault();
+	function tabsSwitchActive($this){
+		$this.addClass('active')
+					.siblings()
+					.removeClass('active')
+	}
 
-		var id  = $(this).attr('href'),
-		top = $(id).offset().top;
+	function containerTransform(translate){
+		$(conteiner).css('transform', 'translateX(' + translate + 'px' + ')')
+	}
 	
-		$('body,html').stop(true).animate({scrollTop: top}, 1000);		
 
-	});	
-
-});
-
-	//Anchor
-	$('.scroll').on('click', function(event){
-		event.preventDefault();
-
-		var id  = $(this).attr('href'),
-		top = $(id).offset().top;
-	
-	$('body,html').stop(true).animate({scrollTop: top}, 1500);
-
-	});	
-});
-
-
-
-
-
-
-
-
-
-
+})();

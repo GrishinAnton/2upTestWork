@@ -1,0 +1,90 @@
+/*FEEDBACK*/
+
+
+.mobile-page--feedback
+	background-image: url('../img/create-page@1.jpg')
+	+retina
+		background-image: url('../img/create-page@2.jpg')
+	
+
+
+
+.feedback-tabs
+	margin-top: rem(38)
+	margin-bottom: rem(44)
+.feedback-tabs__tab
+	ul
+		display: flex
+		justify-content: center
+	li
+		margin-right: rem(39)
+		width: 3.813rem
+		height: 3.813rem
+		border-radius: 1.875rem
+		background-color: rgba(#fff, .1)
+		cursor: pointer		
+		display: flex
+		transition: $tr
+		&:last-child
+			margin-right: 0
+		svg
+			fill: none
+			stroke: #fff
+			margin: auto
+		&.active
+			box-shadow: 0 0.625rem 1.563rem rgba(0, 0, 0, 0.2)
+			background-color: #ffffff
+			transform: scale(1.09)
+			svg
+				stroke: #f96332
+
+.feedback-tabs--phone
+	svg
+		width: 1.25rem
+		height: 1.25rem
+.feedback-tabs--mail
+	svg
+		width: 1.313rem
+		height: 1.063rem
+.feedback-tabs--location
+	svg
+		width: 1rem
+		height: 1.4rem
+		stroke-width: 2
+
+
+
+
+
+
+.feedback-contents
+	display: inline-block
+	transform: translateX(0)
+	transition: $tr
+
+.feedback-content__item
+	text-align: center
+	display: inline-block
+	width: 100%
+	vertical-align: top
+	min-height: rem(200)
+	p
+		margin: 0
+		padding: 0
+		color: #ffffff
+
+.feedback-content__item--title
+	font-size: 1.25rem
+	font-weight: 700
+	text-transform: uppercase
+	letter-spacing: 0.125rem
+
+.feedback-content__item--description
+	opacity: 0.5
+	font-size: 0.688rem
+	font-weight: 700
+
+.feedback-content__form
+	margin-top: rem(40)
+	padding-left: rem(25)
+	padding-right: rem(25)

@@ -1,0 +1,130 @@
+/*NAV-STYLE*/
+.nav
+	position: fixed
+	top: 0
+	transform: translateX(-300px)
+	bottom: 0
+	width: rem(300)
+	overflow-y: scroll
+	background-color: #f78662
+	background-image: url('../img/create-page@1.jpg')
+	background-position: center
+	background-repeat: no-repeat
+	background-size: cover
+	+retina
+		background-image: url('../img/create-page@2.jpg')	
+	z-index: 2
+	transition: $tr	
+	will-change: transform
+	&.active
+		transform: translateX(0)
+
+.nav__inner
+	min-height: 100vh
+	padding-top: rem(47)
+	padding-left: rem(37)
+	padding-right: rem(34)
+	padding-bottom: rem(34)
+	p,a
+		margin: 0
+		padding: 0
+
+.mnu
+	li
+		margin-bottom: rem(30)
+	a
+		display: inline-block		
+		color: #ffffff
+		font-family: Montserrat
+		font-size: 0.813rem
+		line-height: rem(25)
+		font-weight: 700
+		text-transform: uppercase
+		letter-spacing: 0.09rem
+		text-decoration: none
+		position: relative
+		padding-left: rem(60)
+		&::before
+			position: absolute
+			content: ""
+			top: 50%
+			transform: translateY(-50%)
+			left: 0
+			width: 25px
+			height: 23px
+			background-repeat: no-repeat
+			background-position: center
+			background-size: auto
+
+
+.mnu .mnu--news::before
+	height: 19px
+	background-image: url('../img/icons/news.svg')
+
+.mnu .mnu--channels::before
+	height: 18px
+	background-image: url('../img/icons/channels.svg')
+
+.mnu .mnu--bookmarks::before
+	height: 21px
+	background-image: url('../img/icons/bookmarks.svg')
+
+.mnu .mnu--overview::before
+	height: 22px
+	background-image: url('../img/icons/overview.svg')
+
+.mnu .mnu--calendar::before
+	height: 22px
+	background-image: url('../img/icons/calendar.svg')
+
+.mnu .mnu--timeline::before
+	height: 23px
+	background-image: url('../img/icons/timeline.svg')
+
+.mnu .mnu--profile::before
+	height: 22px
+	background-image: url('../img/icons/profile.svg')
+
+.mnu .mnu--widgets::before
+	height: 24px
+	background-image: url('../img/icons/widgets.svg')
+
+.mnu .mnu--settings::before
+	height: 22px
+	background-image: url('../img/icons/setttings.svg')
+
+
+
+
+.nav__logout
+	border-top: 0.063rem solid rgba(#ffffff, .1)
+	padding-left: rem(2)
+	padding-top: rem(25)
+	margin-top: rem(50)
+	display: flex
+	.nav__content
+		display: flex
+		flex-direction: column
+		padding-top: rem(2)
+		padding-bottom: rem(2)
+	a
+		display: inline-block		
+		color: #ffffff
+		font-family: Montserrat
+		font-size: 0.813rem
+		line-height: 0.813rem
+		font-weight: 700
+		text-transform: uppercase
+		letter-spacing: 0.13rem
+		text-decoration: none
+	p
+		margin-top: auto		
+		opacity: 0.5
+		color: #ffffff
+		font-size: 0.688rem
+		line-height: 0.688rem
+		font-weight: 400
+	img
+		max-width: 100%
+		height: auto
+		float: right

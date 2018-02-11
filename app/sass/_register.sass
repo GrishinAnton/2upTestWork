@@ -1,0 +1,74 @@
+/*REGISTER*/
+
+.registration-page
+	background-color: #db876d
+
+
+.mobile-page--registration
+	padding-left: rem(25)
+	padding-right: rem(25)
+	padding-bottom: rem(29)
+	background-image: url('../img/main-bg@1.jpg')
+	+retina
+		background-image: url('../img/main-bg@2.jpg')
+
+
+.mobile-page--mt
+	padding-top: rem(184)
+
+.enter-logo
+	text-align: center
+	position: relative
+	.logo-line
+		left: 50%
+		position: absolute		
+		transform: translateX(-50%)
+		height: rem(20)	
+		transition: $tr
+	.logo--small-line
+		top: rem(-30)		
+		opacity: .4
+		animation: logolinesmall 1.2s infinite
+	.logo--big-line
+		top: rem(-47)
+		height: rem(27)
+		opacity: .2
+		animation: logolinebig 1.2s infinite
+	img
+		max-width: 100%
+		height: auto
+	
+@keyframes logolinesmall
+	0%
+		opacity: .4
+	33%
+		opacity: .5
+	66%
+		opacity: .7
+	100%
+		opacity: .4
+@keyframes logolinebig
+	0%
+		opacity: .2
+	33%
+		opacity: .3
+	66%
+		opacity: .5
+	100%
+		opacity: .2
+
+
+.enter-logo--registration-page	
+	margin-bottom: rem(167)
+
+.registration-link
+	display: flex
+	margin-top: rem(27)
+
+.link
+	opacity: 0.5
+	color: #ffffff
+	font-size: 0.688rem
+	font-weight: 400
+	text-decoration: none
+	

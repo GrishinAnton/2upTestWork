@@ -1,0 +1,104 @@
+/*FORMS-STYLE*/
+
+
+.input-block
+	position: relative
+	&::after
+		position: absolute
+		content: ""
+		top: 50%
+		left: rem(22)
+		transform: translateY(-50%)
+		background-repeat: no-repeat
+		opacity: .5
+		width: rem(22)
+		height: rem(26)
+		background-position: center
+	label
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		left: rem(60)
+		color: #ffffff
+		font-family: $f
+		font-size: 0.813rem
+		font-weight: 400
+		line-height: normall
+		transition: $tr
+		&.active
+			top: 25%
+			font-size: 0.6rem
+			opacity: .5
+.input
+	width: 100%
+	height: 3.438rem
+	border-radius: 1.75rem
+	background-color: rgba(#fff, .1)
+	border: none
+	color: #ffffff
+	font-family: $f
+	font-size: 0.813rem
+	font-weight: 400
+	line-height: normall
+	padding-left: rem(61)
+	padding-right: rem(15)
+	+placeholder-color(#fff)	
+	background-repeat: no-repeat
+
+
+.input:focus + label
+	top: 25%
+	font-size: 0.6rem
+	opacity: .5
+
+
+.input-block--mb
+	margin-bottom: rem(15)
+
+
+//input image
+.input--username::after
+	background-image: url('../img/icons/username.svg')
+
+.input--password::after
+	background-image: url('../img/icons/password.svg')
+
+.input--name::after
+	background-image: url('../img/icons/name.svg')
+
+.input--email::after
+	background-image: url('../img/icons/email.svg')
+	
+
+
+
+//inputSearch
+.search-block
+	height: rem(56)
+	border-bottom: 0.125rem solid rgba(#fff, .2)
+	position: relative
+	
+
+.search
+	width: 100%
+	background-color: transparent
+	height: rem(56)
+	color: #ffffff
+	font-family: Montserrat
+	font-size: 0.75rem
+	font-weight: 700
+	border: none
+	+placeholder-color(#ffffff)
+
+.btn-arrow
+	top: 50%
+	transform: translatey(-50%)
+	right: 0
+	position: absolute	
+	width: 1.375rem
+	height: 1.375rem
+	background-color: transparent
+	background-position: center
+	background-repeat: no-repeat
+	background-image: url('../img/icons/submit.svg')
+	

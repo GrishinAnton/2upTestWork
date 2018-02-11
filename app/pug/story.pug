@@ -1,0 +1,64 @@
+extends layout/_main
+
+block variables
+	- var title = 'Story'
+
+
+block content
+	.mobile-page
+		.header.justify-c-sb
+			.header__item.header__item--back
+				a(href="#")
+			.header__item.header__item--comment
+				a(href="#")
+			.header__item.header__item--tex
+				a(href="#")
+			.header__item.header__item--bookmark
+				a(href="#")
+			.header__item.header__item--share
+				a(href="#")
+		.article
+			.article__header
+				img(src="img/content-title@1.jpg" srcset="img/content-title@2.jpg 2x" alt="Story")
+				p Arctic sea ice extent hits record low for winter maximum
+			.article__information.article--padding
+				p.article__information--cite CNN
+				p.article__information--date Apr 3, 2015
+				p.article__information--category ENVIRONMENT 
+			.article__content.article--padding
+				p According to the National Oceanic and Atmospheric Administration, Ted Scambos, NSIDC lead scientist, puts the potentially record low maximum sea ice extent this year down to low ice extent in the Pacific and a late drop in ice extent in the Barents Sea.
+				.article__media.article__media--two-images
+					img(src="img/image_2@1.jpg", srcset="img/image_2@1.jpg 2x" alt="Mountain").image-shadow
+					img(src="img/image_1@1.jpg", srcset="img/image_1@1.jpg 2x" alt="Walk").image-shadow
+				.article__blockqoute
+					p “Over the span of the satellite record, Arctic sea ice has been declining significantly, while sea ice in the Antarctic has increased very slightly”
+					p.article__blockqoute--small - NOAA
+				p.article__content-title  So what does this new record for the lowest level of winter ice actually mean?
+				p The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever happens with climate change. Even if the Arctic continues to be one of the fastest-warming regions of the world, it will always be plunged into bitterly cold polar dark every winter. And year-by-year, for all kinds of natural reasons, there’s huge variety of the state of the ice.
+				.article__media.article__media--video
+					.article__media__image-inner
+						img(src="img/video-title@1.jpg", srcset="img/video-title@2.jpg 2x" alt="Winter")
+					.article__media__video-inner
+						iframe(id="video" src="//www.youtube.com/embed/FKWwdQu6_ok?enablejsapi=1&html5=1" frameborder="0" allowfullscreen)
+				p For a start, it does not automatically follow that a record amount of ice will melt this summer. More important for determining the size of the annual thaw is the state of the weather as the midnight sun approaches and temperatures rise. But over the more than 30 years of satellite records, scientists have observed a clear pattern of decline, decade- by-decade.
+				p So at some point this century the summers are on course to be clear of ice, opening up new shipping lanes, making it easier to access the region’s oil and gas and possibly also altering the path of the jet stream that drives our weather. So the matter of when all this might happen is the subject of intense research.
+			.article__media.article__media--slider
+				.article-slider
+					.article-slider__item
+						img(src="img/image_gallery_1@1.jpg", srcset="img/image_gallery_1@2.jpg 2x" alt="Fox").image-shadow
+					.article-slider__item
+						img(src="img/image_gallery_1@1.jpg", srcset="img/image_gallery_1@2.jpg 2x" alt="Fox").image-shadow
+					.article-slider__item
+						img(src="img/image_gallery_1@1.jpg", srcset="img/image_gallery_1@2.jpg 2x" alt="Fox").image-shadow
+					.article-slider__item
+						img(src="img/image_gallery_1@1.jpg", srcset="img/image_gallery_1@2.jpg 2x" alt="Fox").image-shadow
+					.article-slider__item
+						img(src="img/image_gallery_1@1.jpg", srcset="img/image_gallery_1@2.jpg 2x" alt="Fox").image-shadow
+				.article-slider__description
+					p.article-slider__description--theme Melting Ice in Arctic Ocean
+					p.article-slider__description--name James Flinton
+		.next-story
+			p.next-story__tag NEXT STORY
+			p.next-story__title New battery for smartphones can be charged in a minute
+			a(href="#").next-story__link
+block script

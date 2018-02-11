@@ -1,0 +1,56 @@
+/*HEADER-STYLE*/
+.header
+	height: 4rem
+	background-color: #f96332
+	display: flex
+
+.header__item
+	width: 20%
+	background-repeat: no-repeat
+	&:active
+		background-color: darken(#f96332, 10%) 
+	a
+		display: block
+		width: 100%
+		height: 100%
+		transition: $tr
+		
+
+//story
+.header__item--back
+	background-image: url('../img/icons/back.svg')
+	background-position: rem(15) rem(32)
+.header__item--comment
+	background-image: url('../img/icons/comments.svg')
+	background-position: center rem(29)
+.header__item--tex
+	background-image: url('../img/icons/text.svg')
+	background-position: center rem(29)
+.header__item--bookmark
+	background-image: url('../img/icons/bookmark.svg')
+	background-position: center rem(29)
+.header__item--share
+	background-image: url('../img/icons/share.svg')
+	background-position: 75% rem(31)	
+
+
+//widgets
+.header__item--mnu
+	background-image: url('../img/icons/menu.svg')
+	background-position: rem(15) rem(31)	
+
+.header__item--logo
+	background-image: url('../img/logo.svg')
+	background-position: center rem(31)	
+	background-size: 30%
+
+.header__item--add
+	background-image: url('../img/icons/add.svg')
+	background-position: 75% rem(31)	
+
+
+//feedback
+
+.header__item--search
+	background-image: url('../img/icons/search.svg')
+	background-position: 75% rem(29)

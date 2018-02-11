@@ -1,0 +1,60 @@
+/*CREATE-ACCAUNT*/
+
+.mobile-page--create-accaunt
+	padding-left: rem(25)
+	padding-right: rem(25)
+	padding-bottom: rem(29)
+	background-image: url('../img/create-page@1.jpg')
+	+retina
+		background-image: url('../img/create-page@2.jpg')
+
+
+.steps
+	padding-top: rem(50)
+	max-width: 250px
+	margin: 0 auto
+	display: flex
+	span
+		position: relative		
+		width: 1.563rem
+		height: 1.563rem
+		border-radius: 50%
+		&::before,
+		&::after
+			position: absolute
+			content: ""
+			top: 50%			
+			transform: translate(-50%, -50%)			
+			background-color: #fff			
+		&::before
+			left: 50%
+			width: rem(5)
+			height: rem(5)
+			border-radius: 50%
+		&::after
+			width: 4.563rem
+			height: 0.063rem
+			background-color: rgba(#fff, .3)
+			right: rem(-118)
+		&:last-child::after
+			display: none
+			
+
+		&.active
+			border: 1px solid rgba(#fff, .3)
+		
+
+.title
+	p
+		text-align: center		
+		margin: 0
+		padding: 0
+		color: #ffffff
+		font-family: Montserrat
+		font-size: 1.25rem
+		font-weight: 700
+		text-transform: uppercase
+
+.title__create-accaunt
+	margin-top: rem(95)
+	margin-bottom: rem(117)

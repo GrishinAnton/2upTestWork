@@ -1,0 +1,32 @@
+extends layout/_main
+
+block variables
+	- var title = 'Страница создания аккаунта'
+
+
+block content
+	.registration-page
+		.mobile-page.mobile-page--create-accaunt
+			.steps.justify-c-sb
+				span.active
+				span
+				span
+			.title.title__create-accaunt
+				p CREATE ACCOUNT
+			.registration-form.form
+				form
+					.input-block.input-block--mb.input--name
+						input(type="text" id="name" class="input" name="name" )
+						label(for="name") Name
+					.input-block.input-block--mb.input--email
+						input(type="email" id="email" class="input" name="Email" required)
+						label(for="email") Email
+					.input-block.input--password
+						input(type="password" id="password" class="input" name="password" required)
+						label(for="password") Password
+					button.btn.btn--transparent.bg--mt50 Continue
+			.registration-link.justify-c-c
+				a(href="#").link Terms & Conditions
+
+	//- +icon('icon')
+block script
